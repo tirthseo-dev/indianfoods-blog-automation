@@ -1,0 +1,85 @@
+{
+  "_HOW_TO_USE": "Replace every <ANGLE BRACKET> value, delete the _ fields, save as config.json. This is the ONLY file that changes between websites.",
+
+  "company": {
+    "_name": "Exact brand name as it should appear in the byline and CTA.",
+    "name": "<COMPANY NAME>",
+
+    "_site": "Homepage URL, no trailing slash. Used to build JSON-LD.",
+    "site": "https://<DOMAIN>",
+
+    "_location": "City, State. Use \"\" if they have no physical presence.",
+    "location": "<CITY, STATE>",
+
+    "_what_we_are": "Finishes the sentence 'Write a blog post for [NAME], ___'. Include years in business if it's a credibility asset.",
+    "what_we_are": "<a residential plumbing company / a B2B logistics firm / an orthodontic practice>",
+
+    "_services": "Comma-separated list of every service line. The model uses this to keep CTAs relevant.",
+    "services": "<service one, service two, service three>",
+
+    "_audience": "Who reads this, and whether coverage is local or national. Say it plainly.",
+    "audience": "<US homeowners, national / small business owners in the Dallas metro>",
+
+    "_reading_level": "Sets vocabulary and assumed background knowledge.",
+    "reading_level": "<a busy homeowner with no technical knowledge / an experienced facilities manager>",
+
+    "_author_name": "Byline. A named person with credentials beats a team name for E-E-A-T.",
+    "author_name": "<The COMPANY Team / Jane Smith, Licensed Master Plumber>",
+
+    "_author_bio": "2-3 sentences for the ABOUT THE AUTHOR box. Concrete credentials, not adjectives.",
+    "author_bio": "<Company bio here.>",
+
+    "_cta_url": "Where the mid-article CTA points. Booking or contact page.",
+    "cta_url": "https://<DOMAIN>/<contact-or-booking-page>",
+
+    "_cta_label": "The action phrase. 'Book a free consultation', 'Get a quote', 'Schedule a call'.",
+    "cta_label": "<Book a free consultation>",
+
+    "_trusted_sources": "Which organisations are authoritative in THIS field. Prevents the model citing content farms.",
+    "trusted_sources": "<EPA, ASHRAE, ICC, or a .edu/.gov source relevant to the topic>",
+
+    "_facts_to_respect": "TWO JOBS: (1) domain facts the model must not get wrong, (2) explicit PROHIBITIONS on repeating unverified marketing claims, guarantees, or statistics from the client's own site. Do not skip part 2.",
+    "facts_to_respect": "<Key domain facts.> Never repeat marketing claims, guarantees, or statistics about <COMPANY> -- describe the approach qualitatively instead."
+  },
+
+  "article": {
+    "_model": "claude-sonnet-5 is the sensible default. claude-opus-4-8 for better prose at ~3x cost.",
+    "model": "claude-sonnet-5",
+    "min_words": 1500,
+    "max_words": 2000,
+    "sections": "7-9",
+    "words_per_section": "150-250",
+    "faq_count": 6,
+    "takeaway_count": 6
+  },
+
+  "discovery": {
+    "country": "us",
+
+    "_min_volume": "Ignore keywords below this monthly search volume. 100-150 is sensible.",
+    "min_volume": 100,
+
+    "_max_kd": "Ahrefs Keyword Difficulty ceiling. 25 for a new site, 35-40 once it ranks for things.",
+    "max_kd": 25,
+
+    "_per_service": "How many candidates to surface per service each week.",
+    "per_service": 4,
+
+    "_seeds": "ONE broad seed keyword per service line. Ahrefs expands each into question-style ideas. Keep seeds short and generic -- 'water heater', not 'best tankless water heater 2026'.",
+    "seeds": {
+      "<Service One>": "<broad seed keyword>",
+      "<Service Two>": "<broad seed keyword>",
+      "<Service Three>": "<broad seed keyword>"
+    }
+  },
+
+  "_banned_phrases": "AI-tell blocklist. Add anything overused in this specific industry.",
+  "banned_phrases": [
+    "delve", "dive into", "unlock", "unleash", "navigate the world of",
+    "in today's fast-paced world", "it's important to note", "in conclusion",
+    "furthermore", "moreover", "landscape", "realm", "tapestry",
+    "game-changer", "robust", "leverage", "crucial", "vital", "elevate",
+    "embark", "testament to", "when it comes to", "at the end of the day",
+    "look no further", "the key is"
+  ]
+}
